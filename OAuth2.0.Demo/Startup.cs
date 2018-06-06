@@ -34,7 +34,8 @@ namespace Mafly.OAuth2._0.Demo
                 AccessTokenExpireTimeSpan = TimeSpan.FromDays(1), //token过期时间
 
                 //提供认证策略
-                Provider = new OpenAuthorizationServerProvider()
+                Provider = new OpenAuthorizationServerProvider(),
+                RefreshTokenProvider = new SimpleRefreshTokenProvider()
                 
             };
             app.UseOAuthBearerTokens(oAuthOptions);
